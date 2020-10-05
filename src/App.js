@@ -8,7 +8,7 @@ const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P
 class App extends Component {
   state = {
     alphabet,
-    usedLetters: [], 
+    usedLetters: new Set(), 
   }
 
   computeDisplay(phrase, usedLetters) {  
