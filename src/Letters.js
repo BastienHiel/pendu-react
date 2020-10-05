@@ -1,15 +1,17 @@
 import React from 'react'; 
 import PropTypes from 'prop-types'; 
-import { Button } from 'semantic-ui-react'; 
+
+import Letter from './Letter'; 
 
 
-const Letters = ({ Alphabet }) => {
-    const list = Alphabet.map((letter, i) => <Button key={i} primary>{letter}</Button>)
-return <div>{list}</div>; 
+const Letters = ({ alphabet, onClick }) => {
+    const letterList = alphabet.map((letter, i) => <Letter value={letter} onClick={onClick} key={i} />)
+    return <div className='letters'>{letterList}</div>; 
 }
 
 export default Letters; 
 
 Letters.propTypes = {
-    Alphabet: PropTypes.array.isRequired
+    alphabet: PropTypes.array.isRequired, 
+    onClick: PropTypes.func.isRequired
 }
